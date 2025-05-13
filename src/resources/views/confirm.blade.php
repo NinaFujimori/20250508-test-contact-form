@@ -11,6 +11,7 @@
         <h2>Confirm</h2>
     </div>
     <form action="/contacts" method="post">
+    @csrf
         <div>
             <table>
                 <tr>
@@ -35,7 +36,9 @@
                 <tr>
                     <th>電話番号</th>
                     <td>
-                        <input type="tel" name="tel" value="{{ $contact['tel'] }}" readonly/>
+                        <input type="tel" name="tel_first" value="{{ $contact['tel_first'] }}" readonly/>
+                        <input type="tel" name="tel_second" value="{{ $contact['tel_second'] }}" readonly/>
+                        <input type="tel" name="tel_third" value="{{ $contact['tel_third'] }}" readonly/>
                     </td>
                 </tr>
                 <tr>
@@ -53,13 +56,14 @@
                 <tr>
                     <th>お問い合わせの種類</th>
                     <td>
-                        <input type="text" name="category" value="$contact['category_id'] }}" readonly/>
+                        <input type="text" name="category_name" value="{{ $contact['category_name'] }}" readonly/>
+                        <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}">
                     </td>
                 </tr>
                 <tr>
                     <th>お問い合わせ内容</th>
                     <td>
-                        <input type="text" name="detail" value="$contact['detail'] }}" readonly/>
+                        <input type="text" name="detail" value="{{$contact['detail'] }}" readonly/>
                     </td>
                 </tr>
             </table>

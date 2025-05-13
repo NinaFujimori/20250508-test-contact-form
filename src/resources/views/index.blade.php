@@ -22,12 +22,14 @@
                 <span>※</span>
             </div>
             <div>
-                <input type="text" name="last_name" placeholder="例）山田" value="{{old('last_name')}}">
-                <input type="text" name="first_name" placeholder="例）太郎" value="{{old('first_name')}}">
+                <input type="text" name="last_name" placeholder="例：山田" value="{{old('last_name')}}">
+                <input type="text" name="first_name" placeholder="例：太郎" value="{{old('first_name')}}">
             </div>
-<!--エラーは姓名別なのか？それともどっちもできるのがあるのか？-->
             <div class="form__error">
-              @error('name')
+              @error('last_name')
+              {{ $message }}
+              @enderror
+              @error('first_name')
               {{ $message }}
               @enderror
             </div>
@@ -38,7 +40,7 @@
                 <span>※</span>
             </div>
             <div>
-                <input type="radio" name="gender" value="男性">男性
+                <input type="radio" name="gender" value="男性" checked>男性
                 <input type="radio" name="gender" value="女性">女性
                 <input type="radio" name="gender" value="その他">その他
             </div>
@@ -54,7 +56,7 @@
                 <span>※</span>
             </div>
             <div>
-                <input type="email" name="email" placeholder="test@example.com" value="{{old('email')}}">
+                <input type="email" name="email" placeholder="例：test@example.com" value="{{old('email')}}">
             </div>
             <div class="form__error">
                 @error('email')
@@ -68,12 +70,18 @@
                 <span>※</span>
             </div>
             <div>
-                <input type="tel" name="tel" placeholder="080" value="{{old('tel-first')}}">
-                <input type="tel" name="tel" placeholder="1234" value="{{old('tel-second')}}">
-                <input type="tel" name="tel" placeholder="5678" value="{{old('tel-third')}}">
+                <input type="tel" name="tel_first" placeholder="080" value="{{old('tel-first')}}">
+                <input type="tel" name="tel_second" placeholder="1234" value="{{old('tel-second')}}">
+                <input type="tel" name="tel_third" placeholder="5678" value="{{old('tel-third')}}">
             </div>
             <div class="form__error">
-                @error('tel')
+                @error('tel_first')
+                {{ $message }}
+                @enderror
+                @error('tel_second')
+                {{ $message }}
+                @enderror
+                @error('tel_third')
                 {{ $message }}
                 @enderror
             </div>
@@ -83,7 +91,7 @@
                 <span>※</span>
             </div>
             <div>
-                <input type="text" name="address" placeholder="例）東京都渋谷区千駄ヶ谷1-2-3" value="{{old('adress')}}">
+                <input type="text" name="address" placeholder="例：東京都渋谷区千駄ヶ谷1-2-3" value="{{old('adress')}}">
             </div>
             <div class="form__error">
               @error('address')
@@ -97,7 +105,7 @@
                 <span>※</span>
             </div>
             <div>
-                <input type="text" name="building" placeholder="例）千駄ヶ谷マンション101" value="{{old('building')}}">
+                <input type="text" name="building" placeholder="例：千駄ヶ谷マンション101" value="{{old('building')}}">
             </div>
             <div class="form__error">
               @error('building')
@@ -111,14 +119,14 @@
             </div>
             <div>
                 <select name="category_id" >
-                    <option value="">選択してください</option>
+                    <option value="" selected disabled>選択してください</option>
                     @foreach ($categories as $category)
-                        <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                        <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="form__error">
-              @error('category')
+              @error('category_id')
               {{ $message }}
               @enderror
             </div>
