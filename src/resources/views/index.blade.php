@@ -11,7 +11,7 @@
 
 <div class="inquiry">
     <div class="inquiry__heading">
-        <h2>Contact</h2>
+        <h2 class="inquiry__heading--text">Contact</h2>
     </div>
     <form class="form" action="/contacts/confirm" method="post">
         @csrf

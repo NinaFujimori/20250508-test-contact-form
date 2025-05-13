@@ -10,16 +10,16 @@
 
 @section('content')
 
-<div>
-    <div>
+<div class="login">
+    <div class="login-title">
         <h2>Login</h2>
     </div>
 
     <form class="form" action="/login" method="post">
         @csrf
-        <div>
+        <div class="form_inner">
             <div>
-                <h3>メールアドレス</h3>
+                <h3 class="form-title">メールアドレス</h3>
             </div>
             <div>
                 <div>
@@ -31,9 +31,11 @@
                     @enderror
                 </div>
             </div>
+        </div>    
 
+        <div>
             <div>
-                <h3>パスワード</h3>
+                <h3 class="form-title">パスワード</h3>
             </div>
             <div>
                 <div>
@@ -45,7 +47,9 @@
                     @enderror
                 </div>
             </div>
+        </div>
 
+        <div>
             <div class="form__button">
                 <button class="form__button-submit"     type="submit">ログイン</button>
             </div>

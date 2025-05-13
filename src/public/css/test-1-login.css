@@ -1,0 +1,17 @@
+.login{
+    width: 100%;
+    background-color: #DDCCBD;
+}
+.login-title{
+    height: 50px;
+}
+.login-title h2{
+    color:#8B7969;
+}
+.form{
+    border: 1px solid #DDCCBD;
+    background-color: #DDCCBD;
+}
+.form-title{
+    color:#8B7969;
+}

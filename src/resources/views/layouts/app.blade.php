@@ -12,8 +12,18 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <h1 class="header__logo">FashonabilityLate</h1>
-            @yield('button')
+            <div class="header-utilities">
+                <div class="header-utilities__inner">
+                    <h1 class="header__logo">FashonabilityLate</h1>
+                </div>
+                <nav>
+                    <ul class="header-nav">
+                        <li class="header-nav__item">
+                            @yield('button')
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 

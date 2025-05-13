@@ -22,10 +22,9 @@
 6. php artisan db:seed
 
 ## 使用技術
-
-・PHP8.0
-・Laravel 10.0
-・MySQL 8.0
+    ・PHP8.0
+    ・Laravel 10.0
+    ・MySQL 8.0
 
 ## ER図
 
@@ -33,7 +32,6 @@
 
 
 ## URL
-
-・環境開発:http://localhost
-・phpMyAdmin:http://localhost:8080/
+    ・環境開発:http://localhost
+    ・phpMyAdmin:http://localhost:8080/
 
